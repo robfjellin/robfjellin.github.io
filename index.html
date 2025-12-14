@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Engineer - Robert Fjellin</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-padding-top: 5.5rem;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #e9e9e9;
+      }
+
+      header {
+        background: linear-gradient(135deg, #4ba7aa 0%, #275796 100%);
+        padding: 2rem;
+        color: white;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+
+      header p {
+        text-align: center;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+        opacity: 0.95;
+      }
+
+      nav {
+        background: white;
+        padding: 1rem 0;
+        box-shadow: 0 2px a5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.7rem 1.5rem;
+        background: linear-gradient(135deg, #4ba7aa 0%, #275796 100%);
+        border-radius: 5px;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+
+      nav a:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .section {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .section h2 {
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid #4ba7aa;
+        font-size: 2rem;
+        color: #275796;
+      }
+
+      .og-artifact {
+        background: linear-gradient(
+          135deg,
+          rgba(75, 167, 170, 0.1) 0%,
+          rgba(39, 87, 150, 0.1) 100%
+        );
+        border-left: 4px solid #275796;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 5px;
+      }
+
+      .og-artifact h3 {
+        color: #275796;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.7rem 1.5rem;
+        background: linear-gradient(135deg, #4ba7aa 0%, #275796 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s;
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .enhancements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .enhancement-card {
+        background: white;
+        border: 2px solid #e0e0e0;
+        padding: 1.5rem;
+        border-radius: 8px;
+        transition: all 0.3s;
+      }
+
+      .enhancement-card h3 {
+        margin-top: 0.5rem;
+        font-size: 1.4rem;
+        color: #275796;
+      }
+
+      .enhancement-card .category {
+        display: inline-block;
+        background: linear-gradient(135deg, #4ba7aa 0%, #275796 100%);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        background: #000;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      footer {
+        background: linear-gradient(135deg, #275796 0%, #4ba7aa 100%);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .contact-info a {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+
+      .contact-info a:hover {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Robert Fjellin</h1>
+      <p>Computer Science 499 Capstone Project</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#self-assessment">Self-Assessment</a></li>
+        <li><a href="#code-review">Code Review</a></li>
+        <li><a href="#og-artifact">Original Artifact</a></li>
+        <li><a href="#enhancements">Enhancements</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <section id="self-assessment" class="section">
+        <h2>Professional Self-Assessment</h2>
+
+        <p>
+          Prior to starting my degree at Southern New Hampshire University I had
+          little experience with software engineering, mainly in web
+          development. Throughout the program I have taken many courses that
+          have helped develop my software engineering skills, transforming me
+          from someone with basic web development knowledge into a well-rounded
+          software engineer that is now prepared to tackle real challenges.
+        </p>
+
+        <p style="margin-top: 1rem">
+          My coursework has fundamentally given me a great understanding of what
+          it means to collaborate within software development. In CS-250
+          (Software Development Lifecycle), I learned about agile frameworks and
+          how to work within them, along with the importance of sprint planning,
+          daily stand-ups, and retrospectives. This was one of the courses that
+          taught me that successful collaboration with a team isn't just about
+          writing code. It's about clear communication, accountability, and
+          iterative improvement. In addition to that, IDS-105 (Cultural
+          Awareness and Online Learning) helped me gain skills in navigating
+          personal conflicts and really understanding how cultural diversity can
+          impact a team's dynamics. These experiences have prepared me to
+          contribute to diverse development teams, where I can balance my own
+          contributions with collective team goals.
+        </p>
+
+        <p style="margin-top: 1rem">
+          Throughout my program here at Southern New Hampshire University, I
+          have developed the ability to break down complex concepts for a
+          variety of audiences. CS-255 (System Analysis and Design) was
+          particularly important, as one of the projects was to create a system
+          model while being able to communicate the design decisions to diverse
+          stakeholder groups. In CS-465 (Full Stack Development I), I took part
+          in implementing end-user, stakeholder, and developer interfaces that
+          aligned with the business objectives. This particular skill set is
+          more than just documentation, rather, ensuring the stakeholders were
+          really able to understand the rationale behind the design decisions.
+        </p>
+
+        <p style="margin-top: 1rem">
+          My foundation in data structures and algorithms has been a vital part
+          of development for me as a software engineer. CS-300 (DSA: Analysis
+          and Design) taught me to evaluate the algorithmic complexity and
+          choosing which data structure was best for a specific problem. During
+          that course I learned that hash maps and binary search trees are more
+          than just learning topics, but instead served their own real world
+          purposes. MAT-230 (Discrete Mathematics) provided me with a
+          theoretical foundation for understanding graph algorithms and logical
+          reasoning which are very important for algorithmic problem solving.
+          These courses taught me to balance competing concerns, whether it's
+          optimization between speed and memory, or simple solutions versus
+          scalable and flexible architectures.
+        </p>
+
+        <p style="margin-top: 1rem">
+          My computer science coursework has emphasized the entire software
+          development lifecycle, not just coding. CS-320 (Software Test,
+          Automation QA) taught me that quality assurance should be at the
+          forefront of development, not the end. Writing unit tests,
+          understanding validation versus verification, and implementing
+          continuous integration has made me a more disciplined engineer.
+          DAD-220 (Introduction to Structured Database Environments) along with
+          CS-340 (Client/Server Development) provided skills that complemented
+          each other in database design and integration. I learned how to
+          normalize databases, write queries, and create interfaces between
+          applications and data. These courses really emphasized that data
+          persistence and retrieval are fundamental to every modern application.
+        </p>
+
+        <p style="margin-top: 1rem">
+          CS-305 (Software Security) changed how I approach software
+          development. I learned during this class that you can't just implement
+          security at the end, instead, it must be thought about and worked on
+          during every stage of development. From basic input validation and
+          encryption to secure authentication protocols and protection from
+          common vulnerabilities like SQL injection or cross-site scripting,
+          this course taught me to not only think like a developer but to put
+          myself in the shoes of the attacker as well. This mindset has stuck
+          with me and has applied to every project since. Rather than just
+          focusing on the functionality, I am now always searching for potential
+          security implications.
+        </p>
+
+        <p style="margin-top: 1rem">
+          The primary artifact of my ePortfolio is a weight tracking application
+          I developed during my CS-360 (Mobile Architect & Programming) class
+          which demonstrates my ability to design, develop, and strategically
+          enhance a mobile application. This project showcases many technical
+          competencies developed throughout my program: mobile application
+          development, database management, user interface design, data
+          visualization, and algorithmic problem solving. The original weight
+          tracking application provided functionality for users to log and
+          monitor their weight entries on a fundamental level. Throughout my
+          enhancement process I significantly upgraded the application's
+          capabilities by implementing data visualization using MPAndroidChart.
+          This enhancement retrieved and transformed raw data from the SQLite
+          database and turned it into an interactive and meaningful graph that
+          now allows users to identify trends and track progress on their weight
+          loss journey.
+        </p>
+
+        <a
+          href="documents/Self-Assessment.docx"
+          class="btn"
+          style="margin-top: 1.5rem"
+          download
+          >Download Self-Assessment</a
+        >
+      </section>
+
+      <section id="code-review" class="section">
+        <h2>Code Review</h2>
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/P-G7bYwEIME?si=tJ0kC14gmQ_0NmAN"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="og-artifact" class="section">
+        <h2>Original Artifact</h2>
+        <div class="og-artifact">
+          <h3>Weight Loss Tracker</h3>
+          <p>
+            The purpose of this application is to help users track their weight
+            over time, providing them a solution for health and fitness
+            monitoring. The mobile app allows users to log their daily weight
+            measurements, visualize their progress through graphs/charts, and
+            set a personalized weight goal. This was built using Android Studio
+            with Java as the primary programming language. SQLite is used for
+            local data storage, ensuring that the user's data is stored securely
+            while also allowing for offline use.
+          </p>
+
+          <p style="margin-top: 1rem">
+            This project demonstrates my skills in mobile appliation
+            development, database management, and user intrerface design
+            principles. This makes it an ideal artifact for showcasing my
+            comptentencies in
+            <b>
+              Software Design & Engineering, Algorithms & Data Structures, and
+              Databases</b
+            >.
+          </p>
+        </div>
+      </section>
+
+      <section id="enhancements" class="section">
+        <h2>Enhancements</h2>
+        <p>
+          Below are the three enhancements that I made to my weight tracking
+          app, each of them demonstrate compentency in different technical
+          areas.
+        </p>
+
+        <div class="enhancements-grid">
+          <div class="enhancement-card">
+            <span class="category">Category 1</span>
+            <h3>Software Design & Engineering</h3>
+            <p>
+              My artifact is a weight tracking Android app. I created the app in
+              one of my previous courses here at SNHU. The apps purpose is to
+              help track weight loss/gain so a user can see how they trend
+              weight-wise over time. I selected this artifact because I believe
+              I can use it for all three enhancements. It already has what I
+              believe to be a great foundation. I believe it shows my ability to
+              be adaptable and learn a library pretty quickly. I made use of the
+              MPAndroidCChart library and was able to retrieve data from my
+              database and use the data to plot points on a line chart for a
+              visual aid to users. I met the course outcomes that I planned in
+              module one, and had a great time doing so. Coming back to an older
+              project was fun for me and I learned the importance of well placed
+              and descriptive comments. Some code I immediately remembered what
+              it did due to comments, but other parts I forgot about and took a
+              little time to re-understand. I learned a lot more about layouts
+              UI-wise. I came across an issue where when I added the weight
+              trend chart, it cut off the bottom of the app. I fixed this by
+              fixing the constraints.
+            </p>
+            <div style="margin-top: 1rem">
+              <a
+                href="https://github.com/robfjellin/Weight-Tracker-App/tree/enhancement-1"
+                target="_blank"
+                class="btn"
+                >View Enhanced Code</a
+              >
+            </div>
+          </div>
+
+          <div class="enhancement-card">
+            <span class="category">Category 2</span>
+            <h3>Algorithms & Data Structures</h3>
+            <p>
+              My artifact is a weight tracking Android app. I created the app in
+              one of my previous courses here at SNHU. The apps purpose is to
+              help track weight loss/gain so a user can see how they trend
+              weight-wise over time. I selected this artifact because I believe
+              I can use it for all three enhancements. It already has what I
+              believe to be a great foundation. For this module I enhanced my
+              artifact by adding a sorting method to the weight history card.
+              This is useful is the user wants to see at which dates they were
+              at their lowest/highest. They can also use this new method to see
+              where they started compared to where they are now. Implementing
+              the sort method this week was a lot easier than implementing the
+              graph that I did last week. I’ve implemented sorting methods in
+              the past and this one brought me back to when I did those
+              originally in an earlier course. I didn’t have much trouble with
+              this enhancement. I did, however, learn more about refreshing the
+              data being displayed within AndroidStudio. Prior to this
+              enhancement the immediate refreshing of data wasn’t this complex.
+            </p>
+            <div style="margin-top: 1rem">
+              <a
+                href="https://github.com/robfjellin/Weight-Tracker-App/tree/enhancement_2"
+                target="_blank"
+                class="btn"
+                >View Enhanced Code</a
+              >
+            </div>
+          </div>
+
+          <div class="enhancement-card">
+            <span class="category">Category 3</span>
+            <h3>Databases</h3>
+            <p>
+              My artifact is a weight tracking Android app. I created the app in
+              one of my previous courses here at SNHU. The apps purpose is to
+              help track weight loss/gain so a user can see how they trend
+              weight-wise over time. I selected this artifact because I believe
+              I can use it for all three enhancements. It already has what I
+              believe to be a great foundation. For this module I enhanced my
+              artifact by adding a new element to my table. My app now keeps
+              track of notes added by the user. For example, if a user cheats on
+              a day and eats more calories than allotted, they can note that in
+              the notes portion of the app. My app so far looks a lot better and
+              more developed than it had originally started at. As I was
+              creating this new enhancement I became even more familiar with
+              databases, specifically SQLite. This was the easiest enhancement
+              of all of my chosen enhancements. I believe the work I did on the
+              previous enhancements set me up for success for this one as I
+              didn’t struggle at all. I am very excited to continue development
+              with this portfolio project and even more ecstatic to showcase
+              this in my ePortfolio that we are building throughout the
+              remaining weeks of this class.
+            </p>
+            <div style="margin-top: 1rem">
+              <a
+                href="https://github.com/robfjellin/Weight-Tracker-App/tree/enhancement_3"
+                target="_blank"
+                class="btn"
+                >View Enhanced Code</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Robert Fjellin. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; opacity: 0.9">
+        CS-499 Capstone Final Project
+      </p>
+      <div class="contact-info">
+        <a href="mailto:robert.fjellin@outlook.com"
+          >robert.fjellin@outlook.com</a
+        >
+        <a
+          href="https://www.linkedin.com/in/robert-fjellin-56340221b/"
+          target="_blank"
+          ><img
+            src="icons/InBug-White.png"
+            alt="LinkedIn Logo"
+            style="height: 20px; vertical-align: bottom; margin-right: 5px"
+          />LinkedIn</a
+        >
+
+        <a href="https://github.com/robfjellin" target="_blank">
+          <img
+            src="icons/github-mark-white.png"
+            alt="GitHub Logo"
+            style="height: 20px; vertical-align: bottom; margin-right: 2px"
+          />
+          GitHub</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
